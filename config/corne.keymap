@@ -40,73 +40,53 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		// |  Q  |  W  |  F  |  P  |  B  |      |  J  |  L  |  U  |  Y  |  ;  |
-		// |  A  |  R  |  S  |  T  |  G  |      |  M  |  N  |  E  |  I  |  O  |
-		// |  Z  |  X  |  C  |  D  |  V  |      |  K  |  H  |  ,  |  .  |  /  |
-		//       | ESC | L1/TAB | L1/TAB |      | L2/SPC | L2/SPC | CAPS |
 		base_layer {
 			display-name = "Base";
 			bindings = <
-				&kp	Q    &kp W    &kp	F    &kp	P		&kp	B		&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI
-				&hm	LGUI	A	&hm	LALT	R	&hm	LSHFT	S	&hm	LCTRL	T	&kp	G		&kp	M		&hm	RCTRL	N	&hm	RSHFT	E	&hm	RALT	I	&hm	RGUI	O
-				&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V		&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH
-								&kp	ESC		&lt	1	TAB		&lt	1	TAB		&lt	2	SPACE	&lt	2	SPACE	&kp	CAPS
+				&kp	Q		&kp W		&kp	F		&kp	P		&kp	B			&kp	J	&kp	L		&kp	U		&kp	Y		&kp	SEMI
+				&hm	LGUI A	&hm	LALT R	&hm	LSHFT S	&hm	LCTRL T	&kp	G			&kp	M	&hm	RCTRL N	&hm	RSHFT E	&hm	RALT I	&hm	RGUI O
+				&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V			&kp	K	&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH
+										&kp	ESC		&lt	1 SPACE &lt	3 TAB		&lt	4 ENTER	&lt	2 BACKSPACE	&kp	CAPS
 			>;
 		};
 
-		// |     |  0  |  7  |  8  |  9  |     | Cut | Prv | Paste | Copy | Next |
-		// | ESC |  0  |  4  |  5  |  6  |     |  ←  |  ↓  |  ↑  |  →  |  ⏎  |
-		// | CAPS|  0  |  1  |  2  |  3  |     | Home| PgDn| PgUp| End  |     |
-		//        |     |     |  .  |     |     |     |     |
 		nav_num_layer {
 			display-name = "Nav+Num";
 			bindings = <
-				&trans		&kp	N0		&kp	N7		&kp	N8		&kp	N9		&kp	LG(X)	&kp	LC(LS(TAB))	&kp	LG(V)	&kp	LG(C)	&kp	LC(TAB)
-				&kp	ESC		&hm	LGUI	N0	&hm	LALT	N4	&hm	LSHFT	N5	&hm	LCTRL	N6	&kp	LEFT	&kp	DOWN	&kp	UP		&kp	RIGHT	&kp	RET
-				&kp	CAPS	&kp	N0		&kp	N1		&kp	N2		&kp	N3		&kp	HOME	&kp	PG_DN	&kp	PG_UP	&kp	END		&trans
-								&trans		&trans		&kp	DOT		&trans		&trans		&trans
-			>;
+				&kp N0       &kp N7         &kp N8         &kp N9      	&trans      	&kp LG(X)  &kp LC(LS(TAB)) &kp LG(V)    &kp LG(C)    &kp LC(TAB)
+				&hm LGUI N0  &hm LALT N4	&hm LSHFT N5   &hm LCTRL N6 &kp DOT     	&trans	   &kp LEFT   	   &kp DOWN        &kp UP       &kp RIGHT
+				&kp N0       &kp N1         &kp N2         &kp N3    	&trans        	&trans     &kp HOME   	   &kp PG_DN       &kp PG_UP    &kp END
+								     		&trans         &trans       &trans          &trans     &trans          &trans
+            >;
 		};
 
-		// |     |  /  |  <  |  >  |  "  |     |  &  |  -  |  [  |  ]  |  %  |
-		// | ESC |  !  |  -  |  +  |  =  |     |  |  |  :  |  (  |  )  |  ?  |
-		// | CAPS|  ^  |  '  |  *  |  `  |     |  ~  |  $  |  {  |  }  |  @  |
-		//        |     |     |  #  |     |     |     |     |
 		symbol_layer {
 			display-name = "Symbol";
 			bindings = <
-				&trans		&kp	FSLH	&kp	LT		&kp	GT		&kp	DQT		&kp	AMPS	&kp	MINUS	&kp	LBKT	&kp	RBKT	&kp	PRCNT
-				&kp	ESC		&hm	LGUI	EXCL	&hm	LALT	MINUS	&hm	LSHFT	PLUS	&hm	LCTRL	EQUAL	&kp	PIPE	&hm	RCTRL	COLON	&hm	RSHFT	LPAR	&hm	RALT	RPAR	&hm	RGUI	QMARK
-				&kp	CAPS	&kp	CARET	&kp	SQT		&kp	STAR	&kp	GRAVE	&kp	TILDE	&kp	DLLR	&kp	LBRC	&kp	RBRC	&kp	AT
-								&trans		&trans		&kp	HASH	&trans		&trans		&trans
+				&kp	FSLH		&kp	LT			&kp	GT			&kp	DQT			&kp	FSLH				&kp	AMPS	&kp	UNDERSCORE		&kp	LBKT		&kp	RBKT		&kp	PRCNT
+				&hm	LGUI EXCL	&hm	LALT MINUS	&hm	LSHFT PLUS	&hm	LCTRL EQUAL	&kp	HASH				&kp	PIPE 	&hm RCTRL COLON &hm RSHFT LPAR	&hm	RALT RPAR &hm RGUI QMARK
+				&kp	CARET		&kp	SQT			&kp	STAR		&kp	GRAVE		&trans					&kp	TILDE	&kp	DLLR		&kp	LBRC		&kp	RBRC		&kp	AT
+								&trans			&trans			&trans									&trans		&trans			&trans
 			>;
 		};
 
-		// |     |  Q  |  W  |  F  |  P  |     |  J  | M←  | M↓  | M↑  | M→  |
-		// | ESC |  A  |  R  |  S  |  T  |     |  M  | MB1 | MB2 | MB3 | MB4 |
-		// | CAPS|  Z  |  X  |  C  |  D  |     |  K  | MB5 |     |     |  /  |
-		//        |     |     |     |     |     |     |     |
 		mouse_layer {
 			display-name = "Mouse";
 			bindings = <
-				&trans		&kp	Q		&kp	W		&kp	F		&kp	P		&kp	J		&kp	LG(LEFT)	&kp	LG(DOWN)	&kp	LG(UP)		&kp	LG(RIGHT)
-				&kp	ESC		&kp	A		&kp	R		&kp	S		&kp	T		&kp	M		&mkp	LCLK		&mkp	MCLK		&mkp	RCLK		&mkp	MB4
-				&kp	CAPS	&kp	Z		&kp	X		&kp	C		&kp	D		&kp	K		&mkp	MB5		&trans			&trans			&kp	FSLH
-								&trans		&trans		&trans		&trans		&trans		&trans
+				&trans	&trans &trans &trans &trans		&trans &kp	LG(LEFT)	&kp	LG(DOWN)	&kp	LG(UP)		&kp	LG(RIGHT)
+				&trans	&trans &trans &trans &trans		&trans &trans &trans &trans &trans
+				&trans	&trans &trans &trans &trans 	&trans &trans &trans &trans &trans
+						&trans		&trans		&trans		&trans		&trans			&trans
 			>;
 		};
 
-		// |     |  Q  | F7  | F8  | F9  |     | Br- | Br+ | Br↑ | Br↓ |     |
-		// | ESC |  A  | F4  | F5  | F6  |     |  M  |Mute |Vol- |Vol+ |  O  |
-		// | CAPS|  Z  | F1  | F2  | F3  |     |  K  |  H  |Sleep|Wake |  /  |
-		//        |     |     | F12 |     | F11 | F10 |     |
 		system_layer {
 			display-name = "System";
 			bindings = <
-				&trans		&kp	Q		&kp	F7		&kp	F8		&kp	F9		&kp	C_BRI_DN	&kp	C_BRI_UP	&kp	C_BRI_INC	&kp	C_BRI_DEC	&trans
-				&kp	ESC		&kp	A		&kp	F4		&kp	F5		&kp	F6		&kp	M			&kp	C_MUTE		&kp	C_VOL_DN	&kp	C_VOL_UP	&kp	O
-				&kp	CAPS	&kp	Z		&kp	F1		&kp	F2		&kp	F3		&kp	K			&kp	H			&kp	C_SLEEP		&kp	C_AL_WAKE	&kp	FSLH
-								&trans		&trans		&kp	F12		&kp	F11		&kp	F10		&trans
+				&trans		&kp	F7		&kp	F8		&kp	F9		&kp F12			 &trans 	&trans			&C_BRI_DN		&C_BRI_UP		&trans
+				&trans		&kp	F4		&kp	F5		&kp	F6		&kp F11			 &trans		&kp	C_MUTE		&kp	C_VOL_DN	&kp	C_VOL_UP	&trans
+				&trans		&kp	F1		&kp	F2		&kp	F3		&kp F10			 &trans		&trans			&kp	C_SLEEP		&kp	C_AL_WAKE	&trans
+										&trans		&trans		&trans			 &trans 	&trans			&trans
 			>;
 		};
 	};
