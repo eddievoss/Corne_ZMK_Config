@@ -76,7 +76,7 @@
 				&trans	&trans &trans &trans &trans		&trans &kp	LG(LEFT)	&kp	LG(DOWN)	&kp	LG(UP)		&kp	LG(RIGHT)
 				&trans	&trans &trans &trans &trans		&trans &trans &trans &trans &trans
 				&trans	&trans &trans &trans &trans 	&trans &trans &trans &trans &trans
-						&trans		&trans		&trans		&trans		&trans			&trans
+				&trans	&trans	&trans		&trans	&trans	&trans
 			>;
 		};
 
