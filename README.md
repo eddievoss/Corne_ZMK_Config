@@ -1,1 +1,1 @@
-Config files for my 5 column corne
+Config files for my wireless 5 column Corne
