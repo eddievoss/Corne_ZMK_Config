@@ -15,7 +15,7 @@
 		zmk,physical-layout = &foostan_corne_5col_layout;
 	};
 
-	// Set up home row mods and momentary layer toggles
+	// Set up home row mods and layer toggles
 	behaviors {
 		hm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
@@ -26,7 +26,6 @@
 			flavor = "balanced";
 			bindings = <&kp>, <&kp>;
 		};
-
 		lt: layer_tap {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -43,50 +42,50 @@
 		base_layer {
 			display-name = "Base";
 			bindings = <
-				&kp	Q		&kp W		&kp	F		&kp	P		&kp	B			&kp	J	&kp	L		&kp	U		&kp	Y		&kp	SEMI
-				&hm	LGUI A	&hm	LALT R	&hm	LSHFT S	&hm	LCTRL T	&kp	G			&kp	M	&hm	RCTRL N	&hm	RSHFT E	&hm	RALT I	&hm	RGUI O
-				&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V			&kp	K	&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH
-										&kp	ESC		&lt	1 SPACE &lt	3 TAB		&lt	4 ENTER	&lt	2 BACKSPACE	&kp	CAPS
+				&kp Q        &kp W        &kp F        &kp P         &kp B          &kp J        &kp L            &kp U         &kp Y         &kp SEMI
+				&hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T   &kp G          &kp M        &hm RCTRL N      &hm RSHFT E   &hm RALT I    &hm RGUI O
+				&kp Z        &kp X        &kp C        &kp D         &kp V          &kp K        &kp H            &kp COMMA     &kp DOT       &kp FSLH
+				                          &kp ESC      &lt 1 SPACE   &lt 3 TAB      &lt 4 ENTER  &lt 2 BACKSPACE  &kp CAPS
 			>;
 		};
 
 		nav_num_layer {
 			display-name = "Nav+Num";
 			bindings = <
-				&kp N0       &kp N7         &kp N8         &kp N9      	&trans      	&kp LG(X)  &kp LC(LS(TAB)) &kp LG(V)    &kp LG(C)    &kp LC(TAB)
-				&hm LGUI N0  &hm LALT N4	&hm LSHFT N5   &hm LCTRL N6 &kp DOT     	&trans	   &kp LEFT   	   &kp DOWN        &kp UP       &kp RIGHT
-				&kp N0       &kp N1         &kp N2         &kp N3    	&trans        	&trans     &kp HOME   	   &kp PG_DN       &kp PG_UP    &kp END
-								     		&trans         &trans       &trans          &trans     &trans          &trans
-            >;
+				&kp N0       &kp N7       &kp N8       &kp N9        &trans         &kp LC(X)    &kp LC(LS(TAB))  &kp LC(V)     &kp LC(C)     &kp LC(TAB)
+				&hm LGUI N0  &hm LALT N4  &hm LSHFT N5 &hm LCTRL N6  &kp DOT        &trans       &kp LEFT         &kp DOWN      &kp UP        &kp RIGHT
+				&kp N0       &kp N1       &kp N2       &kp N3        &trans         &trans       &kp HOME         &kp PG_DN     &kp PG_UP     &kp END
+				                          &trans       &trans        &trans         &trans       &trans           &trans
+			>;
 		};
 
 		symbol_layer {
 			display-name = "Symbol";
 			bindings = <
-				&kp	FSLH		&kp	LT			&kp	GT			&kp	DQT			&kp	FSLH				&kp	AMPS	&kp	UNDERSCORE		&kp	LBKT		&kp	RBKT		&kp	PRCNT
-				&hm	LGUI EXCL	&hm	LALT MINUS	&hm	LSHFT PLUS	&hm	LCTRL EQUAL	&kp	HASH				&kp	PIPE 	&hm RCTRL COLON &hm RSHFT LPAR	&hm	RALT RPAR &hm RGUI QMARK
-				&kp	CARET		&kp	SQT			&kp	STAR		&kp	GRAVE		&trans					&kp	TILDE	&kp	DLLR		&kp	LBRC		&kp	RBRC		&kp	AT
-								&trans			&trans			&trans									&trans		&trans			&trans
+				&kp FSLH      &kp LT           &kp GT          &kp DQT          &kp BSLH       &kp AMPS     &kp UNDERSCORE   &kp LBKT       &kp RBKT       &kp PRCNT
+				&hm LGUI EXCL &hm LALT MINUS   &hm LSHFT PLUS  &hm LCTRL EQUAL  &kp HASH       &kp PIPE     &hm RCTRL COLON  &hm RSHFT LPAR &hm RALT RPAR  &hm RGUI QMARK
+				&kp CARET     &kp SQT          &kp STAR        &kp GRAVE        &trans         &kp TILDE    &kp DLLR         &kp LBRC       &kp RBRC       &kp AT
+				                               &trans          &trans           &trans         &trans       &trans           &trans
 			>;
 		};
 
 		mouse_layer {
 			display-name = "Mouse";
 			bindings = <
-				&trans	&trans &trans &trans &trans		&trans &kp	LG(LEFT)	&kp	LG(DOWN)	&kp	LG(UP)		&kp	LG(RIGHT)
-				&trans	&trans &trans &trans &trans		&trans &trans &trans &trans &trans
-				&trans	&trans &trans &trans &trans 	&trans &trans &trans &trans &trans
-				&trans	&trans	&trans		&trans	&trans	&trans
+				&trans  &trans  &trans  &trans  &trans      &trans  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)
+				&trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans      &trans
+				&trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans      &trans
+				                &trans  &trans  &trans      &trans  &trans        &trans
 			>;
 		};
 
 		system_layer {
 			display-name = "System";
 			bindings = <
-				&bt BT_CLR		&kp	F7		&kp	F8		&kp	F9		&kp F12			 &trans 	&trans			&kp C_BRI_DN	&kp C_BRI_UP	&trans
-				&trans		&kp	F4		&kp	F5		&kp	F6		&kp F11			 &trans		&kp	C_MUTE		&kp	C_VOL_DN	&kp	C_VOL_UP	&trans
-				&trans		&kp	F1		&kp	F2		&kp	F3		&kp F10			 &trans		&trans			&kp	C_SLEEP		&trans			&trans
-										&bt BT_SEL 0 &bt BT_SEL 1	&bt BT_SEL 2			 &trans 	&trans			&trans
+				&bt BT_CLR  &kp F7        &kp F8        &kp F9        &kp F12         &trans  &trans      &kp C_BRI_DN  &kp C_BRI_UP  &trans
+				&trans      &kp F4        &kp F5        &kp F6        &kp F11         &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans
+				&trans      &kp F1        &kp F2        &kp F3        &kp F10         &trans  &trans      &trans        &trans        &trans
+				            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2                  &trans  &trans      &trans
 			>;
 		};
 	};
